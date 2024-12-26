@@ -13,10 +13,6 @@ jobs:
     - name: Checkout the repository
       uses: actions/checkout@v2
 
-    - name: Build the static site (optional step if using build tools)
-      run: |
-        npm run build # Or another build command if necessary (e.g., for frameworks like Gatsby, Vue.js)
-
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
