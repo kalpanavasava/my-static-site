@@ -17,5 +17,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions.
-        branch: gh-pages  # The branch where the static site will be deployed.
+        branch: main  # The branch where the static site will be deployed.
         folder: build  # The folder containing the built static site, e.g., 'public', 'build', etc.
