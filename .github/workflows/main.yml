@@ -18,4 +18,4 @@ jobs:
       with:
         personal_token: ${{ secrets.TOKEN }}  # Automatically provided by GitHub Actions.
         branch: main  # The branch where the static site will be deployed.
-        folder: build  # The folder containing the built static site, e.g., 'public', 'build', etc.
+        folder: build  # The folder containing the built static site.
