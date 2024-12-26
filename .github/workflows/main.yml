@@ -1,0 +1,34 @@
+name: Deploy Static Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # This will deploy when changes are pushed to the 'main' branch.
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js (if you are using tools like npm, webpack, etc.)
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # Set your desired Node.js version, if needed.
+
+    - name: Install dependencies (if using npm/yarn, for example)
+      run: |
+        npm install   # Or `yarn install` if using Yarn
+
+    - name: Build the static site (optional step if using build tools)
+      run: |
+        npm run build # Or another build command if necessary (e.g., for frameworks like Gatsby, Vue.js)
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions.
+        branch: gh-pages  # The branch where the static site will be deployed.
+        folder: build  # The folder containing the built static site, e.g., 'public', 'build', etc.
