@@ -13,15 +13,6 @@ jobs:
     - name: Checkout the repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js (if you are using tools like npm, webpack, etc.)
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'  # Set your desired Node.js version, if needed.
-
-    - name: Install dependencies (if using npm/yarn, for example)
-      run: |
-        npm install   # Or `yarn install` if using Yarn
-
     - name: Build the static site (optional step if using build tools)
       run: |
         npm run build # Or another build command if necessary (e.g., for frameworks like Gatsby, Vue.js)
